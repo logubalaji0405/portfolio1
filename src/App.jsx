@@ -9,6 +9,7 @@ import linkedin from './assets/linkedin.png'
 import insta from './assets/insta.jpg'
 import whatsapp from './assets/whatsapp.png'
 import mail from './assets/mail.jpg'
+import pdf from './assets/BALAJI_G.pdf'
 
 function App() {
   return (
@@ -29,6 +30,13 @@ function App() {
           <div className="col-md-6 text-center">
             <img className="proimg" src={img1} alt="Profile" />
           </div>
+        </div>
+        <div className="pdf">
+          <h2>RESUME</h2>
+          <p>you can see my resume<br></br>
+          <a href={pdf} className="btn">view</a>
+          <a href={pdf} className="btn" download>download</a>
+          </p>
         </div>
       </section>
 

@@ -107,6 +107,17 @@ section {
     object-fit: cover;
     border: 4px solid #0f172a;
   }
+  
+}
+.pdf{
+  
+  a{
+    color: white;
+    background-color: #000000c4;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+  }
 }
 
 /* About */
