@@ -1,166 +1,224 @@
-import Hey from "./Navbar"
-import "./index.css"
+import Navbar from './Navbar'
+import './index.css'
 
-import img1 from "./assets/profile.avif"
+import img1 from './assets/profile.avif'
 import rpimg from './assets/rpimg.jpeg'
-import fpimg from "./assets/fpimg.jpeg"
-import { Contact } from "./contact"
+import UD from './assets/Django.png'
+import fpimg from './assets/fpimg.jpeg'
+
+import { Contact } from './contact'
+
 import linkedin from './assets/linkedin.png'
 import insta from './assets/insta.jpg'
 import whatsapp from './assets/whatsapp.png'
 import mail from './assets/mail.jpg'
-import pdf from './assets/BALAJI_G.pdf'
+import pdf from './assets/Balaji-G.pdf'
 
 function App() {
   return (
-    <div className="body">
+    <div className="site-body">
+      <Navbar />
 
-      <Hey />
+      <section id="a1" className="hero-section">
+        <div className="container">
+          <div className="row align-items-center gy-4">
+            <div className="col-lg-6 text-center text-lg-start">
+              <p className="small-title">WELCOME TO MY PORTFOLIO</p>
+              <h1 className="hero-title">Hi, I’m Balaji</h1>
+              <h3 className="hero-subtitle">
+                React Developer | Front-End Developer | UI Builder
+              </h3>
+              <p className="hero-text">
+                I build responsive, modern, and user-friendly websites using
+                HTML, CSS, JavaScript, Bootstrap, React, Python, and SQL.
+              </p>
 
-      {/* HOME */}
-      <section id="a1" className="container pt-5">
-        <div className="row mt-5 mb-5 align-items-center">
-          <div className="col-md-6 text-center">
-            <h3>Hey, I'm Balaji </h3>
-            <p className="underline">I'm a Front-End Developer</p>
-            <a href="#a4" className="view-pro">View My Project</a>
-            <br /><br />
-            <a href="#a5" className="contact">Contact Me</a>
-          </div>
-          <div className="col-md-6 text-center">
-            <img className="proimg" src={img1} alt="Profile" />
+              <div className="hero-buttons">
+                <a href="#a4" className="btn-main">View Projects</a>
+                <a href="#a5" className="btn-outline-custom">Hire Me</a>
+                <a href={pdf} className="btn-main" download>Download CV</a>
+              </div>
+            </div>
+
+            <div className="col-lg-6 text-center">
+              <div className="profile-frame">
+                <img className="hero-image" src={img1} alt="Balaji profile" />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="pdf">
-          <h2>RESUME</h2>
-          <p>you can see my resume<br></br>
-          <a href={pdf} className="btn">view</a>
-          <a href={pdf} className="btn" download>download</a>
+      </section>
+
+      <section id="a2" className="section-box">
+        <div className="container">
+          <h2 className="section-title">About Me</h2>
+          <div className="about-card">
+            <p>
+              Hi, I’m Balaji, a passionate Front-End Developer with skills in
+              HTML, CSS, JavaScript, Bootstrap, React.js, Python, and SQL.
+              I enjoy building responsive, user-friendly, and modern web
+              applications with clean design and smooth user experience.
+            </p>
+            <p>
+              I am eager to work on real-world projects, improve my development
+              skills, and grow as a full-stack developer. I love creating
+              attractive interfaces and solving practical problems through code.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="a3" className="section-box dark-section">
+        <div className="container">
+          <h2 className="section-title">My Skills</h2>
+          <div className="skills-grid">
+            <div className="skill-box">HTML5</div>
+            <div className="skill-box">CSS3</div>
+            <div className="skill-box">Bootstrap</div>
+            <div className="skill-box">JavaScript</div>
+            <div className="skill-box">React.js</div>
+            <div className="skill-box">Python</div>
+            <div className="skill-box">SQL</div>
+            <div className="skill-box">Git & GitHub</div>
+            <div className="skill-box">Responsive Design</div>
+            <div className="skill-box">MongoDB</div>
+            <div className="skill-box">API Integration</div>
+            <div className="skill-box">MS Office</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="a4" className="section-box">
+        <div className="container">
+          <h2 className="section-title">Projects</h2>
+          <div className="row g-4">
+
+            <div className="col-md-6 col-lg-4">
+              <div className="project-card">
+                <img src={fpimg} alt="Frontend project" className="project-img" />
+                <h3>Front-End E-Commerce</h3>
+                <p>
+                  Built a responsive e-commerce website using HTML, CSS,
+                  JavaScript, and Bootstrap with clean UI and modern layout.
+                </p>
+                <a
+                  className="view-btn"
+                  href="https://logubalaji0405.github.io/mini-project/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <div className="col-md-6 col-lg-4">
+              <div className="project-card">
+                <img src={rpimg} alt="React portfolio" className="project-img" />
+                <h3>React Portfolio</h3>
+                <p>
+                  Created a responsive portfolio website using React, Bootstrap,
+                  and reusable components for personal branding.
+                </p>
+                <a
+                  className="view-btn"
+                  href="https://your-portfolio-link.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <div className="col-md-6 col-lg-4">
+              <div className="project-card">
+                <img src={UD} alt="Travel website" className="project-img" />
+                <h3>Travel Booking Website</h3>
+                <p>
+                  Designed and developed a travel website UI with package cards,
+                  booking flow, responsive layout, and attractive visuals.
+                </p>
+                <a
+                  className="view-btn"
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Coming Soon
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section className="section-box">
+        <div className="container text-center">
+          <h2 className="section-title">Resume</h2>
+          <p className="resume-text">
+            You can view or download my resume here.
           </p>
+          <div className="hero-buttons justify-content-center">
+            <a href={pdf} className="btn-main" target="_blank" rel="noreferrer">View Resume</a>
+            <a href={pdf} className="btn-outline-custom" download>Download Resume</a>
+          </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="a2" className="container">
-        <h1>ABOUT</h1>
-        <p>
-          Hi, I’m Balaji, a Front-End Developer skilled in HTML, CSS, JavaScript, Bootstrap, and React.js.
-          I build responsive, user-friendly websites with clean UI and smooth interactions.<br />
-          I always eager to learn new tools and take on challenges that help me grow as a developer.
-        </p>
-      </section>
+      <section id="a5" className="section-box">
+        <div className="container">
+          <Contact />
 
-      {/* SKILLS */}
-      <section id="a3" className="container">
-        <h1>Skills</h1>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Bootstrap</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>SQL</li>
-          <li>Python</li>
-          <li>Responsive Web Design</li>
-          <li>Git & GitHub</li>
-          <li>MS Office</li>
-        </ul>
-      </section>
+          <div className="connectimg">
+            <a
+              href="https://www.linkedin.com/in/balaji-g-72a0503a9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedin} alt="LinkedIn" />
+            </a>
 
-      {/* PROJECTS */}
-      <section id="a4" className="container py-5">
-        <h1 className="text-center mb-5">Projects</h1>
-        <div className="row justify-content-center g-4">
+            <a
+              href="https://www.instagram.com/_lovely_bala_official"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={insta} alt="Instagram" />
+            </a>
 
-          {/* Project 1 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="project-card">
-              <div className="fpimg">
-                <img src={fpimg} alt="Frontend Project" />
-              </div>
-              <h3>Front-End Project</h3>
-              <p>
-                Built a frontend e-commerce website using HTML, CSS, JavaScript,
-                and Bootstrap with a responsive UI.
-              </p>
-              <a
-                className="view"
-                href="https://logubalaji0405.github.io/mini-project/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project
-              </a>
-            </div>
+            <a
+              href="https://wa.me/916383559277"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={whatsapp} alt="WhatsApp" />
+            </a>
+
+            <a href="mailto:balajigopal457@gmail.com">
+              <img src={mail} alt="Email" />
+            </a>
+
+
           </div>
-
-          {/* Project 2 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="project-card">
-              <div className="rpimg">
-                <img src={rpimg} alt="React Portfolio" />
-              </div>
-              <h3>React Portfolio</h3>
-              <p>
-                Built a responsive React portfolio website using React, Bootstrap,
-                and GitHub Pages.
-              </p>
-              <a
-                className="view"
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project
-              </a>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="a5" className="container">
-        <Contact/>
-
-
-            <div className="connectimg">
-                <a href="https://www.linkedin.com/in/balaji-g-72a0503a9" target="_blank" rel="noreferrer">
-                    <img src={linkedin} alt="LinkedIn" />
-                </a>
-
-                <a href="https://www.instagram.com/_lovely_bala_official" target="_blank" rel="noreferrer">
-                    <img src={insta} alt="Instagram" />
-                </a>
-
-                <a href="https://wa.me/916383559277" target="_blank" rel="noreferrer">
-                    <img src={whatsapp} alt="WhatsApp" />
-                </a>
-
-                <a href="mailto:balajilogu457@gmail.com">
-                    <img src={mail} alt="Email" />
-                </a>
-            </div>
-      </section>
-
-
-      {/* FOOTER */}
-      <footer className="footer mt-5">
+      <footer className="footer">
         <div className="container text-center">
           <h5>Balaji</h5>
-          <p>Front-End Developer | React | JavaScript</p>
+          <p>React Developer | Front-End Developer | JavaScript</p>
+          <p className="mt-2">Open to internships and freelance opportunities</p>
           <p className="mt-2">Call: +91 6383559277</p>
           <p className="mt-2">
-            Email: <a href="mailto:balajilogu457@gmail.com">balajilogu457@gmail.com</a>
+            Email: <a href="mailto:balajigopal457@gmail.com">balajigopal457@gmail.com</a>
           </p>
-          <p className="mt-3 copyright">
-            © 2025 Balaji. All rights reserved.
-          </p>
+          <p className="mt-3 copyright">© 2026 Balaji. All rights reserved.</p>
         </div>
       </footer>
-
     </div>
   )
 }
 
-export default App;
+export default App
