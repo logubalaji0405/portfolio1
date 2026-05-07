@@ -1,7 +1,7 @@
 import Navbar from './Navbar'
 import './index.css'
 
-import img1 from './assets/profile.avif'
+import img1 from './assets/profile.png'
 import rpimg from './assets/rpimg.jpeg'
 import UD from './assets/Django.png'
 import fpimg from './assets/fpimg.jpeg'
