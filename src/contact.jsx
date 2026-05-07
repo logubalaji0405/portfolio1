@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import img2 from './assets/cimg.png'
-
 export const Contact = () => {
   const form = useRef()
 
