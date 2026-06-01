@@ -13,7 +13,7 @@ import insta from './assets/insta.jpg'
 import whatsapp from './assets/whatsapp.png'
 import mail from './assets/mail.jpg'
 
-import pdf from './assets/Balaji-G.pdf'
+import pdf from './assets/Balaji-G-fullstack.pdf'
 
 function App() {
 
