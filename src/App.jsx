@@ -172,7 +172,7 @@ function App() {
 
                   ]}
 
-                  speed={40}
+                  speed={5}
 
                   repeat={Infinity}
 
@@ -276,16 +276,11 @@ function App() {
 
                 <div className="floating-card top-card">
 
-                  ⚛ React Developer
+                  🚀 Available for Hire
 
                 </div>
 
-                <div className="floating-card bottom-card">
-
-                  🐍 Django Developer
-
-                </div>
-
+               
               </motion.div>
 
             </div>
@@ -702,7 +697,7 @@ function App() {
 
           >
 
-            <span>
+            <span className="resume-badge">
 
               DOWNLOAD CV
 
@@ -750,7 +745,7 @@ function App() {
 
                 download
 
-                className="btn-outline-dark"
+                className="btn-main"
 
               >
 

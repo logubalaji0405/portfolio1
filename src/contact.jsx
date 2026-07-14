@@ -25,11 +25,8 @@ export const Contact = () => {
   return (
     <div className="contact-wrapper">
       <div className="contact-left">
-        <h2>Contact Me</h2>
-        <p>
-          Have a project idea, internship opportunity, or freelance work?
-          Send me a message and I will get back to you.
-        </p>
+        <h2 className="contact-title">Contact Me</h2>
+        
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">
           <label>Name</label>

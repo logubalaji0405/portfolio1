@@ -633,7 +633,7 @@ margin-bottom:25px;
 
 .hero-title{
 
-font-size:clamp(52px,7vw,86px);
+font-size:clamp(45px,5vw,70px);
 
 font-weight:900;
 
@@ -1467,6 +1467,9 @@ line-height:1.9;
 .contact-section{
 padding:120px 0;
 }
+.contact-title{
+ color:white;
+}
 
 .contact-wrapper{
 
@@ -1603,6 +1606,21 @@ box-shadow:0 15px 35px rgba(0,0,0,.2);
 transform:translateY(-8px) scale(1.1);
 
 }
+
+
+ label{
+  
+
+font-size:15px;
+
+font-weight:600;
+
+color:#cbd5e1;
+
+margin-left:6px;
+
+}
+
 
 /* ==========================================================
    FOOTER
