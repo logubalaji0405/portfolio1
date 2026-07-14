@@ -1905,10 +1905,22 @@ grid-template-columns:1fr;
 margin:40px auto;
 }
 
-.top-card,
+.top-card{
+display:flex;
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+padding:10px 20px;
+font-size:13px;
+white-space:nowrap;
+z-index:100;
+}
+
 .bottom-card{
 display:none;
 }
+
 
 .section-box{
 padding:90px 0;
