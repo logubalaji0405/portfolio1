@@ -17,6 +17,8 @@ import whatsapp from "./assets/whatsapp.png";
 import mail from "./assets/mail.jpg";
 import Cursor from "./Cursor";
 import { Contact } from "./contact";
+import Loader from "./Loader";
+
 
 function App() {
 
@@ -111,7 +113,9 @@ function App() {
   return (
 
     <div className="site-body">
+      <Loader />
 <Cursor/>
+
       <Navbar />
 
       {/* ================= HERO ================= */}
