@@ -3,36 +3,41 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Loader() {
   const [loading, setLoading] = useState(true);
-  const [text, setText] = useState("Initializing Portfolio...");
+  const [progress, setProgress] = useState(0);
+
+  const messages = [
+    "Initializing Portfolio...",
+    "Loading Components...",
+    "Loading Projects...",
+    "Optimizing Experience...",
+    "Launching Portfolio...",
+  ];
+
+  const currentMessage = messages[
+    Math.min(
+      Math.floor(progress / 17),
+      messages.length - 1
+    )
+  ];
 
   useEffect(() => {
-    const messages = [
-      "Initializing Portfolio...",
-      "Loading Components...",
-      "Loading Projects...",
-      "Connecting Backend...",
-      "Optimizing Experience...",
-      "Welcome 👋",
-    ];
-
-    let index = 0;
+    let value = 0;
 
     const interval = setInterval(() => {
-      index++;
+      value++;
 
-      if (index < messages.length) {
-        setText(messages[index]);
+      setProgress(value);
+
+      if (value >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 600);
       }
-    }, 500);
+    }, 120); // 120ms × 100 = 12 seconds
 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3500);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timer);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -40,7 +45,6 @@ export default function Loader() {
       {loading && (
         <motion.div
           className="loader"
-          initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
             scale: 1.15,
@@ -48,9 +52,9 @@ export default function Loader() {
           }}
         >
           <motion.h1
-            initial={{ scale: 0.7, opacity: 0 }}
+            initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
           >
             Balaji<span>.dev</span>
           </motion.h1>
@@ -58,39 +62,34 @@ export default function Loader() {
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: .4 }}
           >
             Full Stack Developer
           </motion.h2>
 
           <motion.p
-            key={text}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            key={currentMessage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
           >
-            {text}
+            {currentMessage}
           </motion.p>
 
           <div className="loader-bar">
             <motion.div
               className="loader-progress"
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 3 }}
+              animate={{
+                width: `${progress}%`
+              }}
             />
+          </div>
+
+          <div className="loader-percent">
+            {progress}%
           </div>
 
           <div className="loader-tech">
             React • Django • Python • SQL
-          </div>
-
-          <div className="loader-particles">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
           </div>
         </motion.div>
       )}
