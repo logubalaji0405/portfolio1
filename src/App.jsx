@@ -1,175 +1,292 @@
-import Navbar from './Navbar'
-import './index.css'
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
-import img1 from './assets/profile.png'
-import rpimg from './assets/rpimg.jpeg'
-import UD from './assets/Django.png'
-import fpimg from './assets/fpimg.jpeg'
+import Navbar from "./Navbar";
+import "./index.css";
 
-import { Contact } from './contact'
+import img1 from "./assets/profile.png";
+import fpimg from "./assets/fpimg.jpeg";
+import rpimg from "./assets/rpimg.jpeg";
+import UD from "./assets/Django.png";
 
-import linkedin from './assets/linkedin.png'
-import insta from './assets/insta.jpg'
-import whatsapp from './assets/whatsapp.png'
-import mail from './assets/mail.jpg'
+import pdf from "./assets/Balaji-G-fullstack.pdf";
 
-import pdf from './assets/Balaji-G-fullstack.pdf'
+import linkedin from "./assets/linkedin.png";
+import insta from "./assets/insta.jpg";
+import whatsapp from "./assets/whatsapp.png";
+import mail from "./assets/mail.jpg";
+import Cursor from "./Cursor";
+import { Contact } from "./contact";
 
 function App() {
 
   const skills = [
-    'HTML5',
-    'CSS3',
-    'Bootstrap',
-    'JavaScript',
-    'React.js',
-    'Python',
-    'Django',
-    'SQL',
-    'MongoDB',
-    'Git & GitHub',
-    'Responsive Design',
-    'API Integration'
-  ]
+    "HTML5",
+    "CSS3",
+    "Bootstrap",
+    "JavaScript",
+    "React.js",
+    "Python",
+    "Django",
+    "SQL",
+    "MongoDB",
+    "Git",
+    "REST API",
+    "Responsive UI"
+  ];
 
   const services = [
+
     {
-      title: 'Full-Stack Development',
-      text: 'I build responsive and scalable websites using React, Bootstrap, Django, and SQL.'
+      title: "Full Stack Development",
+      text: "Modern scalable React and Django applications."
     },
     {
-      title: 'UI / UX Design',
-      text: 'I create modern, clean, and user-friendly interfaces with smooth layouts and premium design.'
-    },
+    title: "Frontend Development",
+    text: "Build responsive, modern, and interactive websites using React.js, HTML5, CSS3, JavaScript (ES6+), and Bootstrap."
+  },
+  {
+    title: "React.js Development",
+    text: "Develop reusable React components, Single Page Applications (SPA), API integration, routing, and state management."
+  },
+
     {
-      title: 'Web Application Development',
-      text: 'I develop real-world frontend and backend web applications with responsive design.'
+      title: "Responsive UI Design",
+      text: "Pixel perfect websites for desktop and mobile."
+    },
+
+    {
+      title: "Backend Development",
+      text: "Powerful Django APIs and database systems."
     }
-  ]
+
+  ];
 
   const projects = [
+
     {
+
       image: fpimg,
-      title: 'Front-End  E-Commerce',
-      text: 'Responsive e-commerce website using HTML, CSS, JavaScript, and Bootstrap.',
-      tech: 'HTML • CSS • JS • Bootstrap',
-      link: 'https://logubalaji0405.github.io/mini-project/',
-      btn: 'View Project'
+
+      title: "E-Commerce Website",
+
+      text: "Responsive shopping website.",
+
+      tech: "HTML • CSS • Bootstrap • JS",
+
+      link: "https://logubalaji0405.github.io/mini-project/"
+
     },
 
     {
+
       image: rpimg,
-      title: 'React Portfolio',
-      text: 'Modern portfolio website built using React, Bootstrap, reusable components, and responsive design.',
-      tech: 'React • Bootstrap • CSS',
-      link: 'https://your-portfolio-link.com',
-      btn: 'View Project'
+
+      title: "React Portfolio",
+
+      text: "Modern React Portfolio.",
+
+      tech: "React • CSS",
+
+      link: "#"
+
     },
 
     {
+
       image: UD,
-      title: 'Travel Booking Website',
-      text: 'Django travel booking website with packages, booking flow, payment page, and responsive UI.',
-      tech: 'Python • Django • SQLite • Bootstrap',
-      link: 'https://ud-travels.onrender.com/',
-      btn: 'View Project'
+
+      title: "Travel Booking",
+
+      text: "Complete Django travel booking website.",
+
+      tech: "Python • Django",
+
+      link: "https://ud-travels.onrender.com/"
+
     }
-  ]
+
+  ];
 
   return (
-    <div className="site-body">
 
+    <div className="site-body">
+<Cursor/>
       <Navbar />
 
-      {/* HERO SECTION */}
+      {/* ================= HERO ================= */}
 
-      <section id="a1" className="hero-section">
+      <section className="hero-section" id="a1">
 
         <div className="hero-blur one"></div>
+
         <div className="hero-blur two"></div>
 
         <div className="container hero-container">
 
-          <div className="row align-items-center gy-5">
+          <div className="row align-items-center">
 
-            <div className="col-lg-6 text-center text-lg-start">
+            <div className="col-lg-6">
 
-              <span className="badge-text">
-                Full-Stack Developer Portfolio
-              </span>
+              <motion.div
 
-              <h1 className="hero-title">
-                Hi, I’m <span>Balaji</span>
-              </h1>
+                initial={{ opacity: 0, x: -100 }}
 
-              <h3 className="hero-subtitle">
-                Full-Stack Developer | React | Django | UI Designer
-              </h3>
+                animate={{ opacity: 1, x: 0 }}
 
-              <p className="hero-text">
-                Passionate Full-Stack Developer skilled in creating responsive,
-                modern, and user-friendly websites using HTML, CSS, JavaScript,
-                Bootstrap, React, Python, Django, SQL, and MongoDB.
-              </p>
+                transition={{ duration: 1 }}
 
-              <div className="hero-buttons">
+              >
 
-                <a href="#a4" className="btn-main">
-                  View Projects
-                </a>
+                <span className="badge-text">
 
-                <a
-                  href={pdf}
-                  className="btn-outline-custom"
-                  download
-                >
-                  Download CV
-                </a>
+                  🚀 Welcome To My Portfolio
 
-              </div>
+                </span>
 
-              <div className="hero-stats">
+                <h1 className="hero-title">
 
-                <div>
-                  <h4>3+</h4>
-                  <p>Projects</p>
+                  Hi, I'm <span>Balaji</span>
+
+                </h1>
+
+                <TypeAnimation
+
+                  sequence={[
+
+                    "Full Stack Developer",
+
+                    2000,
+
+                    "React Developer",
+
+                    2000,
+
+                    "Django Developer",
+
+                    2000,
+
+                    "Python Programmer",
+
+                    2000,
+
+                  ]}
+
+                  speed={40}
+
+                  repeat={Infinity}
+
+                  className="hero-subtitle"
+
+                />
+
+                <p className="hero-text">
+
+                  I build premium modern web applications using
+                  React, Django, JavaScript, Python and SQL.
+
+                  I love creating beautiful UI with powerful backend
+                  systems.
+
+                </p>
+
+                <div className="hero-buttons">
+
+                  <a href="#a4" className="btn-main">
+
+                    Explore Projects
+
+                  </a>
+
+                  <a
+
+                    href={pdf}
+
+                    download
+
+                    className="btn-outline-custom"
+
+                  >
+
+                    Download Resume
+
+                  </a>
+
                 </div>
 
-                <div>
-                  <h4>10+</h4>
-                  <p>Skills</p>
+                <div className="hero-stats">
+
+                  <div>
+
+                    <h4>10+</h4>
+
+                    <p>Technologies</p>
+
+                  </div>
+
+                  <div>
+
+                    <h4>3+</h4>
+
+                    <p>Projects</p>
+
+                  </div>
+
+                  <div>
+
+                    <h4>100%</h4>
+
+                    <p>Responsive</p>
+
+                  </div>
+
                 </div>
 
-                <div>
-                  <h4>100%</h4>
-                  <p>Responsive</p>
-                </div>
-
-              </div>
+              </motion.div>
 
             </div>
 
             <div className="col-lg-6 text-center">
 
-              <div className="profile-wrapper">
+              <motion.div
+
+                initial={{ opacity: 0, scale: .6 }}
+
+                animate={{ opacity: 1, scale: 1 }}
+
+                transition={{ duration: 1 }}
+
+                className="profile-wrapper"
+
+              >
 
                 <div className="profile-card">
+
                   <img
-                    className="hero-image"
+
                     src={img1}
-                    alt="Balaji profile"
+
+                    alt="Balaji"
+
+                    className="hero-image"
+
                   />
+
                 </div>
 
                 <div className="floating-card top-card">
-                  Full-Stack Developer
+
+                  ⚛ React Developer
+
                 </div>
 
                 <div className="floating-card bottom-card">
-                  Open to Internship
+
+                  🐍 Django Developer
+
                 </div>
 
-              </div>
+              </motion.div>
 
             </div>
 
@@ -179,9 +296,16 @@ function App() {
 
       </section>
 
-      {/* ABOUT */}
+      {/* ================= ABOUT ================= */}
 
-      <section id="a2" className="section-box">
+      <motion.section
+        id="a2"
+        className="section-box"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
 
         <div className="container">
 
@@ -189,57 +313,94 @@ function App() {
 
             <span>ABOUT ME</span>
 
-            <h2>Creative Full-Stack Developer</h2>
+            <h2>Creative Full Stack Developer</h2>
 
             <p>
-              I focus on building beautiful, responsive,
-              and practical web applications.
+              I enjoy building modern websites with beautiful UI,
+              powerful backend systems and smooth user experiences.
             </p>
 
           </div>
 
           <div className="about-grid">
 
-            <div className="about-card">
+            <motion.div
 
-              <h3>Who I Am</h3>
+              className="about-card"
+
+              whileHover={{
+                scale: 1.03,
+                y: -10
+              }}
+
+              transition={{ duration: .3 }}
+
+            >
+
+              <h3>Who Am I?</h3>
 
               <p>
-                I’m Balaji, a passionate developer who enjoys creating
-                modern websites and solving real-world problems through code.
+
+                I'm Balaji, a passionate Full Stack Developer with
+                experience in React, Django, JavaScript,
+                Python, SQL and MongoDB.
+
               </p>
 
               <p>
-                My main skills include React, Bootstrap,
-                JavaScript, Python, Django, SQL,
-                MongoDB, Git, and responsive UI development.
+
+                I love creating premium UI designs,
+                interactive animations,
+                and production-ready web applications.
+
               </p>
 
-            </div>
+            </motion.div>
 
-            <div className="about-card highlight-card">
+            <motion.div
 
-              <h3>My Goal</h3>
+              className="about-card highlight-card"
+
+              whileHover={{
+                scale: 1.03,
+                rotate: -1
+              }}
+
+              transition={{ duration: .3 }}
+
+            >
+
+              <h3>Career Goal</h3>
 
               <p>
-                I want to grow as a full-stack developer by working on
-                real-world projects, internships, freelance work,
-                and production-level applications.
+
+                My goal is to become a professional Full Stack Developer,
+                working on scalable products,
+                AI-powered applications,
+                and high-quality web experiences.
+
               </p>
 
-              <a href="#a5" className="mini-btn">
-                Let’s Connect
+              <a
+                href="#a5"
+                className="mini-btn"
+              >
+
+                Let's Connect
+
               </a>
 
-            </div>
+            </motion.div>
 
           </div>
 
         </div>
 
-      </section>
+      </motion.section>
 
-      {/* SERVICES */}
+
+
+      {/* ================= SERVICES ================= */}
 
       <section className="section-box service-section">
 
@@ -257,19 +418,64 @@ function App() {
 
             {services.map((service, index) => (
 
-              <div className="col-md-4" key={index}>
+              <div
+                className="col-lg-4"
+                key={index}
+              >
 
-                <div className="service-card">
+                <motion.div
+
+                  className="service-card"
+
+                  initial={{
+                    opacity: 0,
+                    y: 60
+                  }}
+
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+
+                  viewport={{
+                    once: true
+                  }}
+
+                  transition={{
+                    delay: index * .2
+                  }}
+
+                  whileHover={{
+
+                    y: -15,
+
+                    scale: 1.04,
+
+                    boxShadow: "0 25px 70px rgba(37,99,235,.25)"
+
+                  }}
+
+                >
 
                   <div className="service-number">
+
                     0{index + 1}
+
                   </div>
 
-                  <h3>{service.title}</h3>
+                  <h3>
 
-                  <p>{service.text}</p>
+                    {service.title}
 
-                </div>
+                  </h3>
+
+                  <p>
+
+                    {service.text}
+
+                  </p>
+
+                </motion.div>
 
               </div>
 
@@ -281,17 +487,30 @@ function App() {
 
       </section>
 
-      {/* SKILLS */}
 
-      <section id="a3" className="section-box dark-section">
+
+      {/* ================= SKILLS ================= */}
+
+      <section
+        id="a3"
+        className="section-box dark-section"
+      >
 
         <div className="container">
 
           <div className="section-heading light-heading">
 
-            <span>SKILLS</span>
+            <span>
 
-            <h2>Technologies I Use</h2>
+              MY SKILLS
+
+            </span>
+
+            <h2>
+
+              Technologies I Love
+
+            </h2>
 
           </div>
 
@@ -299,9 +518,49 @@ function App() {
 
             {skills.map((skill, index) => (
 
-              <div className="skill-box" key={index}>
+              <motion.div
+
+                key={index}
+
+                className="skill-box"
+
+                initial={{
+                  opacity: 0,
+                  scale: .5
+                }}
+
+                whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }}
+
+                viewport={{
+                  once: true
+                }}
+
+                transition={{
+                  delay: index * .05
+                }}
+
+                whileHover={{
+
+                  scale: 1.12,
+
+                  rotate: 2,
+
+                  background:
+                    "linear-gradient(135deg,#2563eb,#38bdf8)",
+
+                  boxShadow:
+                    "0 20px 50px rgba(37,99,235,.4)"
+
+                }}
+
+              >
+
                 {skill}
-              </div>
+
+              </motion.div>
 
             ))}
 
@@ -310,8 +569,7 @@ function App() {
         </div>
 
       </section>
-
-      {/* PROJECTS */}
+      {/* ================= PROJECTS ================= */}
 
       <section id="a4" className="section-box">
 
@@ -319,13 +577,13 @@ function App() {
 
           <div className="section-heading">
 
-            <span>PROJECTS</span>
+            <span>FEATURED PROJECTS</span>
 
-            <h2>Featured Work</h2>
+            <h2>My Latest Work</h2>
 
             <p>
-              Some projects I have built using frontend
-              and backend technologies.
+              Here are some of my recent projects built using
+              React, Django, JavaScript and Python.
             </p>
 
           </div>
@@ -334,38 +592,83 @@ function App() {
 
             {projects.map((project, index) => (
 
-              <div className="col-md-6 col-lg-4" key={index}>
+              <div className="col-lg-4 col-md-6" key={index}>
 
-                <div className="project-card">
+                <motion.div
 
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-img"
-                  />
+                  className="project-card"
+
+                  initial={{ opacity: 0, y: 80 }}
+
+                  whileInView={{ opacity: 1, y: 0 }}
+
+                  viewport={{ once: true }}
+
+                  transition={{ delay: index * .2 }}
+
+                  whileHover={{
+
+                    y: -15,
+
+                    scale: 1.04,
+
+                    rotateX: 6,
+
+                    rotateY: -6
+
+                  }}
+
+                >
+
+                  <div className="project-image">
+
+                    <img
+
+                      src={project.image}
+
+                      alt={project.title}
+
+                      className="project-img"
+
+                    />
+
+                  </div>
 
                   <div className="project-content">
 
                     <span className="project-tech">
+
                       {project.tech}
+
                     </span>
 
                     <h3>{project.title}</h3>
 
                     <p>{project.text}</p>
 
-                    <a
-                      className="view-btn"
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.btn}
-                    </a>
+                    <div className="project-buttons">
+
+                      <a
+
+                        href={project.link}
+
+                        target="_blank"
+
+                        rel="noreferrer"
+
+                        className="view-btn"
+
+                      >
+
+                        Live Demo
+
+                      </a>
+
+                    </div>
 
                   </div>
 
-                </div>
+                </motion.div>
 
               </div>
 
@@ -377,143 +680,317 @@ function App() {
 
       </section>
 
-      {/* RESUME */}
 
-      <section className="section-box resume-section">
+
+      {/* ================= RESUME ================= */}
+
+      <section className="resume-section">
 
         <div className="container">
 
-          <div className="resume-card text-center">
+          <motion.div
 
-            <span>RESUME</span>
+            className="resume-card"
+
+            initial={{ opacity: 0, scale: .8 }}
+
+            whileInView={{ opacity: 1, scale: 1 }}
+
+            viewport={{ once: true }}
+
+            transition={{ duration: .7 }}
+
+          >
+
+            <span>
+
+              DOWNLOAD CV
+
+            </span>
 
             <h2>
-              Ready to work on real-world projects
+
+              Let's Build Something Amazing Together
+
             </h2>
 
             <p>
-              View or download my resume for internship,
-              freelance, and full-stack developer opportunities.
+
+              I'm currently looking for Full Stack Developer,
+
+              Frontend Developer,
+
+              React Developer,
+
+              and Python Django opportunities.
+
             </p>
 
             <div className="hero-buttons justify-content-center">
 
               <a
+
                 href={pdf}
-                className="btn-main"
+
                 target="_blank"
+
                 rel="noreferrer"
+
+                className="btn-main"
+
               >
+
                 View Resume
+
               </a>
 
               <a
+
                 href={pdf}
-                className="btn-outline-dark"
+
                 download
+
+                className="btn-outline-dark"
+
               >
+
                 Download Resume
+
               </a>
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 
       </section>
-
-      {/* CONTACT */}
+      {/* ================= CONTACT ================= */}
 
       <section id="a5" className="section-box contact-section">
 
         <div className="container">
 
-          <div className="section-heading">
+          <motion.div
+
+            initial={{ opacity: 0, y: 60 }}
+
+            whileInView={{ opacity: 1, y: 0 }}
+
+            viewport={{ once: true }}
+
+            transition={{ duration: 0.8 }}
+
+            className="section-heading"
+
+          >
 
             <span>CONTACT</span>
 
-            <h2>Let’s Build Something</h2>
+            <h2>Let's Build Something Amazing</h2>
 
-          </div>
+            <p>
+
+              Have a project or internship opportunity?
+
+              Feel free to contact me anytime.
+
+            </p>
+
+          </motion.div>
 
           <Contact />
 
-          <div className="connectimg">
+          <motion.div
 
-            <a
+            className="connectimg"
+
+            initial={{ opacity: 0 }}
+
+            whileInView={{ opacity: 1 }}
+
+            viewport={{ once: true }}
+
+            transition={{ delay: .4 }}
+
+          >
+
+            <motion.a
+
+              whileHover={{
+
+                scale: 1.2,
+
+                rotate: 10
+
+              }}
+
               href="https://www.linkedin.com/in/balaji-g-72a0503a9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={linkedin} alt="LinkedIn" />
-            </a>
 
-            <a
+              target="_blank"
+
+              rel="noreferrer"
+
+            >
+
+              <img src={linkedin} alt="linkedin" />
+
+            </motion.a>
+
+            <motion.a
+
+              whileHover={{
+
+                scale: 1.2,
+
+                rotate: -10
+
+              }}
+
               href="https://www.instagram.com/_lovely_bala_official"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={insta} alt="Instagram" />
-            </a>
 
-            <a
+              target="_blank"
+
+              rel="noreferrer"
+
+            >
+
+              <img src={insta} alt="instagram" />
+
+            </motion.a>
+
+            <motion.a
+
+              whileHover={{
+
+                scale: 1.2,
+
+                rotate: 10
+
+              }}
+
               href="https://wa.me/916383559277"
+
               target="_blank"
+
               rel="noreferrer"
+
             >
-              <img src={whatsapp} alt="WhatsApp" />
-            </a>
 
-            <a href="mailto:balajigopal457@gmail.com">
-              <img src={mail} alt="Email" />
-            </a>
+              <img src={whatsapp} alt="whatsapp" />
 
-          </div>
+            </motion.a>
+
+            <motion.a
+
+              whileHover={{
+
+                scale: 1.2,
+
+                rotate: -10
+
+              }}
+
+              href="mailto:balajigopal457@gmail.com"
+
+            >
+
+              <img src={mail} alt="mail" />
+
+            </motion.a>
+
+          </motion.div>
 
         </div>
 
       </section>
 
-      {/* FOOTER */}
+
+
+      {/* ================= FOOTER ================= */}
 
       <footer className="footer">
 
-        <div className="container text-center">
+        <div className="container">
 
-          <h5>
-            Balaji<span>.dev</span>
-          </h5>
+          <motion.div
 
-          <p>
-            React Developer | Full-Stack Developer | UI Builder
-          </p>
+            initial={{ opacity: 0 }}
 
-          <p>
-            Open to internships and freelance opportunities
-          </p>
+            whileInView={{ opacity: 1 }}
 
-          <p>
-            Call: +91 6383559277
-          </p>
+            viewport={{ once: true }}
 
-          <p>
-            Email:
-            <a href="mailto:balajigopal457@gmail.com">
-              {' '}balajigopal457@gmail.com
-            </a>
-          </p>
+            transition={{ duration: 1 }}
 
-          <p className="copyright">
-            © 2026 Balaji. All rights reserved.
-          </p>
+          >
+
+            <h2 className="footer-logo">
+
+              Balaji<span>.dev</span>
+
+            </h2>
+
+            <p>
+
+              Full Stack Developer
+
+              |
+
+              React Developer
+
+              |
+
+              Python Django Developer
+
+            </p>
+
+            <p>
+
+              Open to Internship • Freelance • Full-Time Opportunities
+
+            </p>
+
+            <div className="footer-contact">
+
+              <p>
+
+                📞 +91 6383559277
+
+              </p>
+
+              <p>
+
+                📧 balajigopal457@gmail.com
+
+              </p>
+
+            </div>
+
+            <div className="footer-bottom">
+
+              <p>
+
+                © 2026 Balaji.
+
+                Designed & Developed with ❤️ using React.
+
+              </p>
+
+            </div>
+
+          </motion.div>
 
         </div>
 
       </footer>
 
     </div>
+
   )
+
 }
 
-export default App
+export default App;
+
+

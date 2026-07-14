@@ -1,0 +1,30 @@
+.cursor{
+
+position:fixed;
+
+width:30px;
+
+height:30px;
+
+border-radius:50%;
+
+border:2px solid #38bdf8;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+transition:
+transform .08s linear;
+
+z-index:99999;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+
+0 0 20px #38bdf8,
+
+0 0 40px #38bdf8;
+
+}
